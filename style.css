@@ -5,6 +5,7 @@ body, html, div {
 #root {
   width: 100vw;
   min-height: 100vh;
+  background-color: #9394a3;
 }
 #article {
   width: 60vw;
@@ -13,9 +14,9 @@ body, html, div {
   background-color: #fff;
 }
 #main {
-  border-top: 5px solid #000;
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
+  border-top: 20px solid #fff;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
 }
 #top {
   height: 400px;
