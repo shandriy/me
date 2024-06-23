@@ -1,0 +1,30 @@
+body, html, div {
+  margin: 0;
+  padding: 0;
+}
+#root {
+  width: 100vw;
+  min-height: 100vh;
+}
+#article {
+  width: 60vw;
+  margin-left: 20vw;
+  min-height: 200vh;
+  background-color: #fff;
+}
+#main {
+  border-top: 5px solid #000;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+#top {
+  height: 400px;
+  font-size: 200px;
+  color: #fff;
+}
+#rain {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+}
