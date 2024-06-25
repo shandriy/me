@@ -50,7 +50,6 @@ addEventListener("DOMContentLoaded", () => {
     }
     width = canvas.width;
     height = canvas.height;
-    //rain();
   }
   onresize = resize;
   onfocus = () => {
