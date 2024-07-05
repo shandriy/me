@@ -19,12 +19,6 @@ noscript {
   padding: 0px 0px 0px 0px;
   color: #f00;
 }
-#general-layer {
-  z-index: 1;
-}
-#ui-layer {
-  z-index: 2;
-}
 #hide {
   display: none;
 }
