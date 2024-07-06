@@ -35,7 +35,5 @@ addEventListener("DOMContentLoaded", function() {
   resizeCanvas();
   addEventListener("resize", resizeCanvas);
   addEventListener("focus", resizeCanvas);
-  loadScript("defs/" + version + ".js", function() {
-
-  });
+  loadScript("defs/" + version + ".js");
 });
