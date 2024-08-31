@@ -1,12 +1,18 @@
-.header {
-  top: 0;
-  position: sticky;
+.window {
+  margin: 0;
+  padding: 8px;
+  border-width: 5px;
+  border-color: #555;
+  border-style: solid;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
 }
-.header-links {
-  text-align: center;
-  text-align-last: justify;
-}
-.header-links a {
-  color: inherit;
-  text-decoration: none;
+.window::before {
+  display: block;
+  content: "asd";
+  margin: -8px -8px 8px -8px;
+  width: 100% + 16px;
+  height: 24px;
+  background-color: #555;
 }
