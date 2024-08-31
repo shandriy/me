@@ -1,0 +1,12 @@
+.header {
+  top: 0;
+  position: sticky;
+}
+.header-links {
+  text-align: center;
+  text-align-last: justify;
+}
+.header-links a {
+  color: inherit;
+  text-decoration: none;
+}
