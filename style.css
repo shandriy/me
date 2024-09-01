@@ -9,7 +9,7 @@
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
 }
-.window .before {
+.window .handle {
   display: block;
   content: "\00a0";
   margin: -13px -13px 8px -13px;
@@ -18,4 +18,8 @@
   -webkit-border-radius: 3px;
   height: 24px;
   background-color: #99b;
+  text-align: right;
+}
+.window .handle .button {
+  display: inline;
 }
