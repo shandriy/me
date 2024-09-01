@@ -9,6 +9,7 @@ addEventListener("DOMContentLoaded", function() {
     var offsetX = 0;
     var offsetY = 0;
     windowDiv.children[0].addEventListener("mousedown", function(event) {
+      event.preventDefault();
       down = true;
       var top = parseFloat(windowDiv.style.top);
       var left = parseFloat(windowDiv.style.left);
@@ -26,6 +27,7 @@ addEventListener("DOMContentLoaded", function() {
     });
     addEventListener("mousemove", function(event) {
       if (down) {
+        event.preventDefault();
         var y = event.pageY + offsetY;
         var x = event.pageX + offsetX;
         windowDiv.style.top = y + "px";
