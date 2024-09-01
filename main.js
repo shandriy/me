@@ -1,8 +1,10 @@
+var highestZIndex = 0;
 function displayWindow(name, src) {
   var windowDiv = document.createElement("div");
   windowDiv.setAttribute("class", "window");
   var handle = document.createElement("div");
   handle.setAttribute("class", "handle");
+  handle.innerHTML = name;
   windowDiv.appendChild(handle);
   var down = false;
   var top = 0;
@@ -22,6 +24,10 @@ function displayWindow(name, src) {
     };
     offsetY = top - event.pageY;
     offsetX = left - event.pageX;
+  });
+  windowDiv.addEventListener("mousedown", function() {
+    highestZIndex += 1;
+    windowDiv.style.zIndex = highestZIndex;
   });
   addEventListener("mouseup", function() {
     down = false;

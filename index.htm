@@ -8,7 +8,10 @@
 </head>
 <body>
   <script>
-    document.body.appendChild(displayWindow());
+    document.body.appendChild(displayWindow("Hello"));
+    setTimeout(function() {
+      document.body.appendChild(displayWindow("Goodbye"));
+    }, 1000);
   </script>
 </body>
 </html>
