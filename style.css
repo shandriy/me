@@ -1,8 +1,9 @@
 .window {
+  position: absolute;
   margin: 0;
   padding: 8px;
   border-width: 5px;
-  border-color: #555;
+  border-color: #99b;
   border-style: solid;
   border-radius: 3px;
   -moz-border-radius: 3px;
@@ -10,9 +11,11 @@
 }
 .window::before {
   display: block;
-  content: "asd";
-  margin: -8px -8px 8px -8px;
-  width: 100% + 16px;
+  content: "\00a0";
+  margin: -13px -13px 8px -13px;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
   height: 24px;
-  background-color: #555;
+  background-color: #99b;
 }
