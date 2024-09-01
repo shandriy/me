@@ -8,7 +8,7 @@ addEventListener("DOMContentLoaded", function() {
     var left = 0;
     var offsetX = 0;
     var offsetY = 0;
-    windowDiv.addEventListener("mousedown", function(event) {
+    windowDiv.children[0].addEventListener("mousedown", function(event) {
       down = true;
       var top = parseFloat(windowDiv.style.top);
       var left = parseFloat(windowDiv.style.left);

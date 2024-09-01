@@ -9,7 +9,7 @@
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
 }
-.window::before {
+.window .before {
   display: block;
   content: "\00a0";
   margin: -13px -13px 8px -13px;
