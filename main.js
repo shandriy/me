@@ -6,6 +6,10 @@ function displayWindow(name, src) {
   handle.setAttribute("class", "handle");
   handle.innerHTML = name;
   windowDiv.appendChild(handle);
+  var content = document.createElement("div");
+  windowDiv.appendChild(content);
+  content.style.width = "100px";
+  content.style.height = "100px";
   var down = false;
   var top = 0;
   var left = 0;
@@ -28,6 +32,8 @@ function displayWindow(name, src) {
   windowDiv.addEventListener("mousedown", function() {
     highestZIndex += 1;
     windowDiv.style.zIndex = highestZIndex;
+    var taskbar = document.getElementsByClassName("taskbar")[0];
+    taskbar.style.zIndex = highestZIndex + 1;
   });
   addEventListener("mouseup", function() {
     down = false;
@@ -45,3 +51,11 @@ function displayWindow(name, src) {
   });
   return windowDiv;
 };
+addEventListener("DOMContentLoaded", function() {
+  var content = document.querySelector(".taskbar .content");
+  function time() {
+    content.innerHTML = new Date().toLocaleTimeString();
+  };
+  time();
+  setInterval(time, 1000);
+});

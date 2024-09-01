@@ -1,3 +1,8 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
 .window {
   position: absolute;
   margin: 0;
@@ -19,8 +24,22 @@
   -webkit-border-radius: 3px;
   height: 24px;
   background-color: #99b;
-  text-align: right;
+  text-align: left;
+  font-family: Helvetica, Arial, sans-serif;
+  padding: 3px;
 }
 .window .handle .button {
   display: inline;
+}
+.taskbar {
+  background-color: #333;
+  width: 100%;
+  height: 48px;
+  position: absolute;
+  bottom: 0;
+  font-family: Helvetica, Arial, sans-serif;
+  text-align: right;
+}
+.taskbar .content {
+  margin: 3px;
 }
