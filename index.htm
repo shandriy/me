@@ -13,24 +13,131 @@
     p {
       text-indent: 1em;
     }
+    .left {
+      width: 20%;
+    }
+    .center {
+      width: 60%;
+    }
+    .right {
+      width: 20%;
+    }
+    @media (max-width: 640px) {
+      .left {
+        width: 80%;
+        display: none;
+      }
+      .center {
+        width: 20%;
+      }
+      .right {
+        width: 80%;
+        display: none;
+      }
+    }
   </style>
+  <script>
+    var left, right;
+    var leftButton, rightButton;
+    addEventListener("DOMContentLoaded", function() {
+      left = document.getElementsByClassName("left")[0];
+      right = document.getElementsByClassName("right")[0];
+      leftButton = document.getElementById("left-button");
+      rightButton = document.getElementById("right-button");
+    });
+    addEventListener("resize", function() {
+      if (innerWidth <= 640) {
+        if (left.style.display !== "none" && right.style.display !== "none") {
+          left.style.display = "none";
+          right.style.display = "none";
+        } else {
+          if (left.style.display === "none" && right.style.display !== "none") leftButton.style.display = "none";
+          if (left.style.display !== "none" && right.style.display === "none") rightButton.style.display = "none";
+        }
+      } else {
+        if (left.style.display === "none" && right.style.display === "none") {
+          left.style.display = "table-cell";
+          right.style.display = "table-cell";
+        }
+        leftButton.style.display = "inline-block";
+        rightButton.style.display = "inline-block";
+      }
+    });
+    function toggleLeft() {
+      var computed = getComputedStyle(left);
+      var display = computed.getPropertyValue("display");
+      if (display !== "none") {
+        left.style.display = "none";
+        rightButton.style.display = "inline-block";
+      }
+      else {
+        left.style.display = "table-cell";
+        if (innerWidth <= 640) {
+          right.style.display = "none";
+          rightButton.style.display = "none";
+        }
+      }
+    }
+    function toggleRight() {
+      var computed = getComputedStyle(right);
+      var display = computed.getPropertyValue("display");
+      if (display !== "none") {
+        right.style.display = "none";
+        leftButton.style.display = "inline-block";
+      } else {
+        right.style.display = "table-cell";
+        if (innerWidth <= 640) {
+          left.style.display = "none";
+          leftButton.style.display = "none";
+        }
+      }
+    }
+  </script>
 </head>
 <body style="margin: 16px">
+  <noscript style="color: #f00">pleasepleaseplease enable javascript</noscript>
   <table style="width: 100%">
     <tbody>
-      <th colspan="3">
-        <h1>My website</h1>
-      </th>
       <tr>
-        <td style="width: 20% !important">
-          <button>Maybe here would be links to other pages if they existed</button>
+        <th colspan="3">
+          <br>
+          <span style="font-size: xx-large">My website</span>
+          <br>&nbsp;
+        </th>
+      </tr>
+      <tr>
+        <td class="left" style="padding: 0">
+          <table style="width: 100%">
+            <tr>
+              <td>
+                <h3>Todays song!!!</h3>
+                <p>BIRDS OF A FEATHER - Billie Eilish -
+                  <a href="http://open.spotify.com/track/6dOtVTDdiauQNBQEDOtlAB?si=8309667bb2b444e0">spotify</a> -
+                  <a href="http://youtu.be/d5gf9dXbPi0?si=K7kiSJdlS86bgARM">youtube</a>
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h3>Site pages</h3>
+                <ul>
+                  <li>
+                    <a href="index.htm">home (this page)</a>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </table>
         </td>
-        <td style="width: 60% !important">
+        <td class="center">
+          <button onclick="toggleLeft()" style="float: left" id="left-button">toggle nav</button>
+          <button onclick="toggleRight()" style="float: right" id="right-button">toggle pages</button>
+          <br>
           <h2>Hi!!!!!</h2>
           <hr>
           <p>Welcome to my website!!!</p>
           <p>I don't know what to put here but hopefully ill update it later</p>
-          <p>languages: english, russian. @entyspite on discord</p>
+          <p>languages: english, russian. @entyspite on discord. she/they</p>
           <p>
             About me!!!!!! i like programming and art sometimes.
             i mostly do js because I really like the idea of being able to share things so freely through the web with people on all sorts of devices!!
@@ -66,26 +173,27 @@
             <li>
               inabakumori kinda random. i just listen to them whenever i feel like which isnt very often but also i keep returning so. also not all the songs are on spotify which sucks but oh well
             </li>
-            <li>everything else is just kinda random. i just listen to whatever i feel like atm so hard to list specific artists but some songs that i like!!:</li>
+            <li>everything else is just kinda random. i just listen to whatever i feel like atm so hard to list specific artists but some songs that i like!!:
               (not from the mori or schnozz)
               push ur t3mprr - femtanyl,
-              не учи - kis-kis
+              не учи - kis-kis,
               cutlery - uki3,
               со мною вот что происходит - the irony of fate,
               burn this moment into the retina of my eye - goreshit,
-              я женюсь на девочке из аниме - egor nats
+              я женюсь на девочке из аниме - egor nats,
               desiredrive - kisida kyodan,
               lemon tree - garden of paradise,
               make a move - icon for hire,
-              все идет по плану - egor letov
-              echo - crusher-p
-              symphony - naoki
+              все идет по плану - egor letov,
+              echo - crusher-p,
+              symphony - naoki,
               forest frenzy - omori
+            </li>
           </ul>
           <p>thank you for visiting my site!!!</p>
           <p>i am working on adding more :3</p>
         </td>
-        <td style="width: 20% !important">
+        <td class="right">
           <h3>Cool websites!!!</h3>
           <ul>
             <li>
