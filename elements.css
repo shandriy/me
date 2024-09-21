@@ -1,0 +1,24 @@
+.site-box {
+  text-align: center;
+  background-image: url("https://enty.nekoweb.org/assets/wallpaper.jpg");
+  background-repeat: no-repeat;
+  color: #000;
+  font-size: 16px;
+}
+.site-box .sitefeature {
+  background-position: center;
+  background-image: url("https://enty.nekoweb.org/assets/Times_New_Roman.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: none;
+}
+.site-box .sitefeature img {
+  opacity: 0;
+}
+.site-box a p {
+  color: #000;
+  font-weight: bold;
+}
+.site-box a span {
+  color: #000;
+}
