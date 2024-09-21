@@ -4,8 +4,17 @@
   <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>enty</title>
-  <link rel="stylesheet" type="text/css" href="styles/main.css">
-  <script type="text/javascript" src="scripts/main.js"></script>
+  <link rel="stylesheet" type="text/css" href="styles/main.css?v=1">
+  <script>
+    var references = {
+      "home": "index",
+      "2024.9.19": "blog/2024/9/19",
+      "2024.9.21": "blog/2024/9/21",
+      "changelog": "changelog",
+      "blog": "blog"
+    };
+  </script>
+  <script type="text/javascript" src="scripts/main.js?v=1"></script>
 </head>
 <body>
   <noscript style="color: #f00">
@@ -62,7 +71,7 @@
           <button onclick="toggleRight()" style="float: right" id="right-button">toggle pages</button>
           <br>
           <br>
-          <i>press <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>r</kbd> if the page isn't loading correctly</i>
+          <i>please press <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>r</kbd> if the page isn't loading correctly</i>
           <div id="xhr-response-content"></div>
           <hr>
           <p style="font-size: small; text-align: center">Tested on Firefox 130.0.1 Windows 64-bit and Chrome 1.0.154.59 Windows</p>

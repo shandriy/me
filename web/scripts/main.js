@@ -38,12 +38,6 @@ addEventListener("DOMContentLoaded", function() {
   var map = [];
   var cache = [];
   var hashes = [];
-  var references = {
-    "home": "home",
-    "2024.9.19": "blog/2024/9/19",
-    "changelog": "changelog",
-    "blog": "blog"
-  };
   var element = document.getElementById("xhr-response-content");
   setInterval(function() {
     if (location.hash !== hash) {
@@ -70,10 +64,13 @@ addEventListener("DOMContentLoaded", function() {
         if (url === undefined) {
           url = "404";
           if (hash.substring(1) === "") {
-            url = "home"
+            url = "index"
           }
         }
-        xhr.open("GET", "pages/" + url + ".html")
+        xhr.open("GET", "pages/" + url + ".html?r=" + Date.now());
+        xhr.setRequestHeader("Cache-Control", "no-cache, no-store, max-age=0");
+        xhr.setRequestHeader("Expires", "Thu, 1 Jan 1970 00:00:00 GMT");
+        xhr.setRequestHeader("Pragma", "no-cache");
         xhr.send();
       } else {
         element.innerHTML = cache[map[hashIndex]];
