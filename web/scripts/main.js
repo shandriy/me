@@ -41,7 +41,8 @@ addEventListener("DOMContentLoaded", function() {
   var references = {
     "home": "home",
     "2024.9.19": "blog/2024/9/19",
-    "changelog": "changelog"
+    "changelog": "changelog",
+    "blog": "blog"
   };
   var element = document.getElementById("xhr-response-content");
   setInterval(function() {
