@@ -9,7 +9,7 @@
   background-position: center;
   background-image: url("https://enty.nekoweb.org/assets/Times_New_Roman.png");
   background-repeat: no-repeat;
-  background-size: auto auto;
+  background-size: contain;
   border: none;
 }
 .site-box .sitefeature img {
