@@ -7,7 +7,7 @@
   <link rel="stylesheet" type="text/css" href="styles/main.css">
   <script type="text/javascript" src="scripts/main.js"></script>
 </head>
-<body style="margin: 16px; background-image: url('assets/wallpaper.jpg'); background-color: #ede1d1; background-size: 512px">
+<body>
   <noscript style="color: #f00">
     <p>pleasepleaseplease enable javascript</p>
   </noscript>
@@ -16,12 +16,13 @@
       <tr>
         <th colspan="3">
           <br>
-          <span style="font-size: xx-large">My website</span>
+          <div id="th-bg"></div>
+          <span style="font-size: xx-large; color: #fff">My website</span>
           <br>&nbsp;
         </th>
       </tr>
       <tr>
-        <td class="left">
+        <td class="left box">
           <table style="width: 100%">
             <tr>
               <td>
@@ -56,7 +57,7 @@
             </tr>
           </table>
         </td>
-        <td class="center">
+        <td class="center box">
           <button onclick="toggleLeft()" style="float: left" id="left-button">toggle nav</button>
           <button onclick="toggleRight()" style="float: right" id="right-button">toggle pages</button>
           <br>
@@ -66,7 +67,7 @@
           <hr>
           <p style="font-size: small; text-align: center">Tested on Firefox 130.0.1 Windows 64-bit and Chrome 1.0.154.59 Windows</p>
         </td>
-        <td class="right">
+        <td class="right box">
           <table style="width: 100%;">
             <tr>
               <td>

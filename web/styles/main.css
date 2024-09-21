@@ -1,11 +1,48 @@
+h1, h2, h3, h4, h5, h6 {
+  text-decoration: underline;
+  text-decoration-color: #aec7b4;
+}
+th {
+  box-shadow: 0 0 8px #000;
+  -moz-box-shadow: 0 0 8px #000;
+  -webkit-box-shadow: 0 0 8px #000;
+}
+th span {
+  filter: drop-shadow(0 0 4px #000);
+  -moz-filter: drop-shadow(0 0 4px #000);
+  -webkit-filter: drop-shadow(0 0 4px #000);
+}
 body {
   font-family: "Times New Roman", Times, serif;
+  margin: 16px;
+  background-image: url('../assets/green_wallpaper.jpg');
+  background-color: #147c65;
+  background-size: 256px;
+  -moz-background-size: 256px;
+  -webkit-background-size: 256px;
 }
-td {
-  background-color: #fffff3;
-  border: 1px solid #998;
+.box {
+  background-color: #dff0e3;
+  border-top: 8px solid #fff;
+  border-left: 8px solid #c1d6c6;
+  border-right: 8px solid #c1d6c6;
+  border-bottom: 8px solid #aec7b4;
   vertical-align: top;
   padding: 16px;
+  box-shadow: 0 4px 8px #000;
+  -moz-box-shadow: 0 4px 8px #000;
+  -webkit-box-shadow: 0 4px 8px #000;
+}
+td {
+  background-color: #e8f3ea;
+  border: 1px solid #fff;
+  border-top: 8px solid #fff;
+  border-bottom: 8px solid #d4e6d7;
+  vertical-align: top;
+  padding: 16px;
+  box-shadow: 0 4px 8px #a1b9a7;
+  -moz-box-shadow: 0 4px 8px #a1b9a7;
+  -webkit-box-shadow: 0 4px 8px #a1b9a7;
 }
 button {
   border-radius: 0;
@@ -13,7 +50,7 @@ button {
   -webkit-border-radius: 0;
   border: none;
   color: #000;
-  background-color: #fffff3;
+  background-color: #dff0e3;
   text-decoration: underline;
   font-family: Helvetica, Arial, sans-serif;
 }
