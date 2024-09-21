@@ -1,29 +1,16 @@
-name: Deploy to Nekoweb
-
-on:
-  push:
-    branches:
-      - master
+on: [push]
 
 jobs:
-  deploy:
+  test:
     runs-on: ubuntu-latest
-
+    name: deploy2nekoweb
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Prepare build
-        run: |
-          mkdir -p ./build
-          cp -r ./public/* ./build
-
-      - name: Deploy to Nekoweb
-        uses: mp-pinheiro/nekoweb-deploy@main
+      - name: deploy2nekoweb
+        uses: deploy2nekoweb/deploy2nekoweb@v4
         with:
-          API_KEY: ${{ secrets.NEKOWEB_API_KEY }}
-          BUILD_DIR: './'
-          DEPLOY_DIR: '/'
-          CLEANUP: 'False'
-          DELAY: '0.5'
-          NEKOWEB_PAGENAME: 'enty'
+          nekoweb-api-key: ${{ secrets.NEKOWEB_API_KEY }}
+          nekoweb-cookie: ${{ secrets.NEKOWEB_COOKIE }}
+          nekoweb-folder: './'
+          directory: './'
