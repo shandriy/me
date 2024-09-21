@@ -12,5 +12,5 @@ jobs:
         with:
           nekoweb-api-key: ${{ secrets.NEKOWEB_API_KEY }}
           nekoweb-cookie: ${{ secrets.NEKOWEB_COOKIE }}
-          nekoweb-folder: './'
-          directory: './'
+          nekoweb-folder: 'enty'
+          directory: '/'
