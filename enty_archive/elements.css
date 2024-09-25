@@ -1,0 +1,28 @@
+/*! taken from local98.nekoweb.org and edited */
+/*! thank you!!! */
+
+.site-box {
+    font-family: "Times New Roman", Times, serif;
+    text-align: center;
+    color: white;
+    background-image: url("https://enty.nekoweb.org/luckystar.gif");
+    background-repeat: no-repeat;
+    background-size: contain;
+    font-size: 12px;
+}
+.site-box a p {
+    font-family: inherit;
+    color: white;
+    font-weight: bold;
+    border: none;
+    text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+}
+.site-box a span {
+    font-family: inherit;
+    color: white;
+    text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+}
+.site-box .sitefeature {
+    visibility: hidden;
+    display: none;
+}
