@@ -21,18 +21,6 @@ body {
   -moz-background-size: 256px;
   -webkit-background-size: 256px;
 }
-.box {
-  background-color: #dff0e3;
-  border-top: 8px solid #fff;
-  border-left: 8px solid #c1d6c6;
-  border-right: 8px solid #c1d6c6;
-  border-bottom: 8px solid #aec7b4;
-  vertical-align: top;
-  padding: 16px;
-  box-shadow: 0 4px 8px #000;
-  -moz-box-shadow: 0 4px 8px #000;
-  -webkit-box-shadow: 0 4px 8px #000;
-}
 .td {
   background-color: #e8f3ea;
   border: 1px solid #fff;
@@ -80,4 +68,16 @@ p {
     width: 80%;
     display: none;
   }
+}
+.box {
+  background-color: #dff0e3;
+  border-top: 8px solid #fff;
+  border-left: 8px solid #c1d6c6;
+  border-right: 8px solid #c1d6c6;
+  border-bottom: 8px solid #aec7b4;
+  vertical-align: top;
+  padding: 16px;
+  box-shadow: 0 4px 8px #000;
+  -moz-box-shadow: 0 4px 8px #000;
+  -webkit-box-shadow: 0 4px 8px #000;
 }
