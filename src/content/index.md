@@ -1,3 +1,4 @@
 [//]: # (generic)
 
 asd
+[asd](a)
