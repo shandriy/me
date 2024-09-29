@@ -3,12 +3,54 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script>
-    var script = document.createElement("script");
-    script.setAttribute("src", "main.js?t=" + Date.now());
-    var head = document.getElementsByTagName("head")[0];
-    head.appendChild(script);
-  </script>
+  <style>
+    table {
+      table-layout: fixed;
+      width: 80%;
+      margin-left: 10%;
+    }
+    td {
+      border: 1px solid #aaa;
+    }
+    .left {
+      padding: 0;
+      width: 20%;
+      overflow-x: hidden;
+    }
+    .center {
+      width: 60%;
+      overflow-x: hidden;
+    }
+    .left {
+      padding: 0;
+      width: 20%;
+      overflow-x: hidden;
+    }
+  </style>
 </head>
-<body></body>
+<body>
+  <table>
+    <tbody>
+      <tr>
+        <td class="left">
+  
+        </td>
+        <td rowspan="3" class="center">
+  
+        </td>
+        <td class="right">
+
+        </td>
+      </tr>
+      <tr>
+        <td class="left">
+
+        </td>
+        <td class="right">
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</body>
 </html>
