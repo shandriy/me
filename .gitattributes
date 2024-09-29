@@ -6,3 +6,5 @@
 *.gitattributes linguist-detectable=true
 build linguist-vendored=true
 build linguist-detectable=false
+web linguist-vendored=true
+web linguist-detectable=false
