@@ -1,0 +1,6 @@
+*.md linguist-language=Markdown
+*.md linguist-detectable=true
+*.yml linguist-detectable=true
+*.yml linguist-language=YAML
+*.gitattributes linguist-language=Git Attributes
+*.gitattributes linguist-detectable=true

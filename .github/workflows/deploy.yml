@@ -1,4 +1,7 @@
-on: [push]
+on:
+  push:
+    paths:
+      - build
 
 jobs:
   test:
@@ -12,5 +15,5 @@ jobs:
         with:
           nekoweb-api-key: ${{ secrets.NEKOWEB_API_KEY }}
           nekoweb-cookie: ${{ secrets.NEKOWEB_COOKIE }}
-          nekoweb-folder: 'c'
-          directory: 'web'
+          nekoweb-folder: 'build'
+          directory: 'build'
