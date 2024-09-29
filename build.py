@@ -17,6 +17,8 @@ for path in glob.glob("src/content/**/*", recursive = True):
   if path[len(path) - 3:] == ".md":
     read = open(path, "r").read()
     layout_name = read[read.find("[//]: # (") + 9 : read.find(")")]
+    if read.find("[//]: # (") == -1 or len(layout_name) == 0:
+      layout_name = "generic"
     layout = open("src/layouts/" + layout_name + ".htm", "r").read()
     markdown_contents = markdown.markdown(read)
     starts = list(find_all(layout, "<![["))

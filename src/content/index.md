@@ -1,4 +1,1 @@
 [//]: # (generic)
-
-asd
-[asd](a)
