@@ -3,7 +3,6 @@ import glob
 import time
 import markdown
 
-template = open("src/template.htm", "r").read()
 def find_all(string, substring):
   start = 0
   while True:
@@ -11,14 +10,17 @@ def find_all(string, substring):
     if start == -1 : return
     yield start
     start += len(substring)
-starts = list(find_all(template, "<![["))
-ends = list(find_all(template, "]]>"))
 for path in glob.glob("src/md/**/*.md", recursive = True):
-  markdown_contents = markdown.markdown(open(path, "r").read())
-  current = template
+  read = open(path, "r").read()
+  layout_name = read[read.find("[//]: # (") + 9 : read.find(")")]
+  layout = open("src/layouts/" + layout_name + ".htm", "r").read()
+  markdown_contents = markdown.markdown(read)
+  starts = list(find_all(layout, "<![["))
+  ends = list(find_all(layout, "]]>"))
+  current = layout
   for index, value in enumerate(starts):
-    contents = template[value + 4 : ends[index]]
-    results = eval(template[value + 4 : ends[index]])
+    contents = layout[value + 4 : ends[index]]
+    results = eval(layout[value + 4 : ends[index]])
     current = current.replace("<![[" + contents + "]]>", str(results))
   out = open("build" + path[6 : len(path) - 2] + "htm", "w")
   out.write(current)
