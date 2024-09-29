@@ -3,7 +3,7 @@ on:
     branches:
       - master
     paths:
-      - /build
+      - /build/**
 
 jobs:
   test:
