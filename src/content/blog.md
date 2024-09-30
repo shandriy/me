@@ -1,3 +1,5 @@
+<!--[[USE_LAYOUT_generic.htm]]-->
+
 ## blog
 
 ### 2024

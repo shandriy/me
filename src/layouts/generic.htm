@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script type="text/javascript" src="main.js?t=<![[int(time.time())]]>"></script>
+  <script type="text/javascript" src="main.js?t=<!--[[printf `date +%s`]]-->"></script>
 </head>
 <body>
   <div>
-    <![[markdown_contents]]>
+    <!--[[USE_CONTENTS]]-->
   </div>
 </body>
 </html>

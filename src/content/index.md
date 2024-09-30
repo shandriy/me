@@ -1,4 +1,4 @@
-[//]: # (generic)
+<!--[[USE_LAYOUT_generic.htm]]-->
 
 ### latest
 ---
