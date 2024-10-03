@@ -15,7 +15,7 @@ h1, h2, h3, h4, h5, h6 {
 body {
   font-family: "Times New Roman", Times, serif;
   margin: 16px;
-  background-image: url('../assets/green_wallpaper.jpg');
+  background-image: url("../assets/green_wallpaper.jpg");
   background-color: #147c65;
   background-size: 256px;
   -moz-background-size: 256px;
