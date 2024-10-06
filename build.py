@@ -82,10 +82,12 @@ def handle_comments(path, out_path, start_comment, end_comment, start_regex, end
             layout_contents = layout_contents.replace("<!--[[USE_CONTENTS]]-->", contents)
         else:
             layout_contents = layout_contents.replace("/*[[USE_CONTENTS]]*/", contents)
-            if os.path.basename(path).lower().endswith(".css"):
+            if os.path.basename(layout_path).lower().endswith(".css"):
                 final_out_extension = ".css"
-            else:
+            elif os.path.basename(layout_path).lower().endswith(".js"):
                 final_out_extension = ".js"
+            else:
+                final_out_extension = os.path.basename(layout_path).lower()[os.path.basename(layout_path).lower().index("."):]
 
         layout = open(out_path, "w")
         layout.write(layout_contents)
