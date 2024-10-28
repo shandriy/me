@@ -1,1 +1,0 @@
-<!--[[USE_LAYOUT_svg/bg.svg]]-->

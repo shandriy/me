@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>C20</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="static/images/favicon.png">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <script type="text/javascript">
+    var scriptPath = "static/scripts/main.js";
+    var stylePath = "static/styles/main.css";
+
+    addEventListener("DOMContentLoaded", function() {
+      var head = document.head || document.getElementsByTagName("head")[0];
+
+      var script = document.createElement("script");
+      script.setAttribute("src", scriptPath + "?t=" + Date.now());
+      script.setAttribute("type", "text/javascript");
+      head.appendChild(script);
+
+      var style = document.createElement("link");
+      style.setAttribute("rel", "stylesheet");
+      style.setAttribute("href", stylePath + "?t=" + Date.now());
+      style.setAttribute("type", "text/css");
+      head.appendChild(style);
+    })
+  </script>
+</head>
+</html>
