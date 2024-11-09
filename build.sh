@@ -4,7 +4,7 @@
 cd $(dirname $0)
 
 # VARIABLES
-BUILD_DIR=build
+BUILD_DIR=docs
 WORKING_DIR=working
 SOURCE_DIR=src
 TEMPLATE_DIR=template
