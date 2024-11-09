@@ -23,6 +23,14 @@ mkdir $WORKING_DIR
 # source directory
 find $SOURCE_DIR > $WORKING_DIR/lists.txt
 
+# Substitute second literal
+pre=$(cat $TEMPLATE_DIR/pre.htm)
+substr="@s"
+replacement=$(date +"%s")
+echo $pre | sed -r s/$substr/$replacement/g > $WORKING_DIR/pre.htm
+post=$(cat $TEMPLATE_DIR/post.htm)
+echo $post | sed -r s/$substr/$replacement/g > $WORKING_DIR/post.htm
+
 # Convert all markdown files to HTML using
 # pandoc. Append pre and post HTML
 # template files
@@ -39,12 +47,11 @@ do
       mkdir $BUILD_DIR/$REL
     fi
   else
-    echo $path
     if [[ $path == *.md ]]
     then
-      cat $TEMPLATE_DIR/pre.htm > $BUILD_DIR/$REL
+      cat $WORKING_DIR/pre.htm > $BUILD_DIR/$REL
       pandoc $path >> $BUILD_DIR/$REL
-      cat $TEMPLATE_DIR/post.htm >> $BUILD_DIR/$REL
+      cat $WORKING_DIR/post.htm >> $BUILD_DIR/$REL
       new_path=$BUILD_DIR/$REL
       mv $BUILD_DIR/$REL "${new_path%.*}.htm"
     else
