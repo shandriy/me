@@ -3,7 +3,9 @@
 
 ---
 
-## About me
+<h2 style="margin-bottom:0">About me</h2>
+<p style="margin-top:0;text-indent:0;text-decoration:none;">*~[Sign my guestbook!](https://enty.atabook.org)~*</p>
+
 This my website I made to rant about whatever I want regardless of how obscure or uninteresting it is. I speak English and Russian.
 
 I like programming and especially focusing on backwards-compatible JS. Planning to learn C or C++ next. My favorite video games are Hollow Knight, osu, SOUND VOLTEX, and Project Sekai.
