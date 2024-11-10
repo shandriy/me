@@ -50,7 +50,7 @@ do
     if [[ $path == *.md ]]
     then
       cat $WORKING_DIR/pre.htm > $BUILD_DIR/$REL
-      pandoc $path >> $BUILD_DIR/$REL
+      pandoc $path -f markdown-smart >> $BUILD_DIR/$REL
       cat $WORKING_DIR/post.htm >> $BUILD_DIR/$REL
       new_path=$BUILD_DIR/$REL
       mv $BUILD_DIR/$REL "${new_path%.*}.htm"
