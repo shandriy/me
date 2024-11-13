@@ -1,63 +1,91 @@
-#!/bin/bash
+#!/bin/sh
 
-# Set working directory to script directory
+# Sets directory to that in which the script is located
+
 cd $(dirname $0)
 
-# VARIABLES
-BUILD_DIR=docs
-WORKING_DIR=working
-SOURCE_DIR=src
-TEMPLATE_DIR=template
-STATIC_DIR=static
+# Search for configuration script and execute it
+# Initilizes constant variables and paths
 
-# Set working directory relative to build
-# directory
-WORKING_DIR=$BUILD_DIR/$WORKING_DIR
+if [ -f "./config.sh" ]
+then
 
-# Reset all
-rm -rf $BUILD_DIR
-mkdir $BUILD_DIR
-mkdir $WORKING_DIR
+  . "./config.sh"
 
-# Get a recursive list of all files in the
-# source directory
-find $SOURCE_DIR > $WORKING_DIR/lists.txt
+elif [ -f "./config" ]
+then
 
-# Substitute second literal
-pre=$(cat $TEMPLATE_DIR/pre.htm)
-substr="@s"
-replacement=$(date +"%s")
-echo $pre | sed -r s/$substr/$replacement/g > $WORKING_DIR/pre.htm
-post=$(cat $TEMPLATE_DIR/post.htm)
-echo $post | sed -r s/$substr/$replacement/g > $WORKING_DIR/post.htm
+  . "./config"
 
-# Convert all markdown files to HTML using
-# pandoc. Append pre and post HTML
-# template files
+else
 
-# If file is HTML, just move it to the
-# build direcoty
-while read path
+  # If no configuration file has been found,
+  # initalize global variables to defaults
+
+  SOURCE_DIR="./.src"
+  TEMPLATE_DIR="./.tmp"
+  GENERATED_DIR="./.gen"
+
+fi
+
+# If generated files exist, delete all of them
+
+GENERATED_LISTING="$GENERATED_DIR/generated_list.txt"
+GENERATED_SOURCE_LISTING="$GENERATED_DIR/generated_source.txt"
+
+if [ -f $GENERATED_LISTING ]
+then
+
+  # Loop over every file listed, and delete all
+
+  while read line
+  do
+
+    rm -rf "$line"
+
+  done < "$GENERATED_LISTING"
+
+fi
+
+# Reset the generated directory
+
+rm -rf "$GENERATED_DIR"
+mkdir "$GENERATED_DIR"
+
+# Create files needed for the generated dir;
+# Needed later in script
+
+touch "$GENERATED_LISTING"
+touch "$GENERATED_SOURCE_LISTING"
+
+# Begin collecting a list of source files
+# If the source directory does not exist, replace
+# it with an empty one. If it is a file, replace it
+# with an empty directory as well.
+
+if [ ! -d "$SOURCE_DIR" ]
+then
+
+  rm -f "$SOURCE_DIR"
+  mkdir "$SOURCE_DIR"
+
+fi
+
+find "$SOURCE_DIR" > "$GENERATED_SOURCE_LISTING"
+
+# Loop other every path listed in the source directory
+
+while read line
 do
-  REL=$(realpath -m --relative-to=$SOURCE_DIR $path)
-  if [[ -d $path ]]
-  then
-    if [ ! -d $BUILD_DIR/$REL ]
-    then
-      mkdir $BUILD_DIR/$REL
-    fi
-  else
-    if [[ $path == *.md ]]
-    then
-      cat $WORKING_DIR/pre.htm > $BUILD_DIR/$REL
-      pandoc $path -f markdown-smart >> $BUILD_DIR/$REL
-      cat $WORKING_DIR/post.htm >> $BUILD_DIR/$REL
-      new_path=$BUILD_DIR/$REL
-      mv $BUILD_DIR/$REL "${new_path%.*}.htm"
-    else
-      cp $path $BUILD_DIR/$REL
-    fi
-  fi
-done < $WORKING_DIR/lists.txt
 
-cp -r $STATIC_DIR $BUILD_DIR/$STATIC_DIR
+  # Get path relative to the source directory for output
+
+  relative_path=$(realpath -m --relative-to="$SOURCE_DIR" "$line")
+  output_path="./$relative_path"
+
+  if [ "${relative_path##*.}" = "md" ]
+  then
+    echo a
+  fi
+
+done < "$GENERATED_SOURCE_LISTING"

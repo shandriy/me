@@ -1,4 +1,0 @@
-src
-src/.nojekyll
-src/index.md
-src/robots.txt
