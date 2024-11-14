@@ -124,6 +124,11 @@ do
     output_text=""
     current_text="$template_text"
 
+    if [ -f "./$FILE_BUILD" ]
+    then
+      . "./$FILE_BUILD"
+    fi
+
     # Loop to substitute variables
     # Empty string means loop continues
     # Once it is any non-empty value, the loop ends
@@ -131,12 +136,33 @@ do
     while [ -z "$is_looping" ]
     do
 
-      output_text="$output_text"${current_text#"*{{"}
-      echo $output_text
-      is_looping="1"
+      output_text="$output_text"${current_text%%"{{"*}
+
+      if [ ${current_text%%"{{"*} != $current_text ]
+      then
+
+        # I have no idea how this is working but it's working
+
+        split=${current_text#*"{{"}
+        eval var_value="\$${split%%"}}"*}"
+        output_text="$output_text""$var_value"
+        current_text=${current_text#*"}}"}
+
+        if [ -z "$current_text" ]
+        then
+
+          is_looping="1"
+
+        fi
+
+      else
+
+        is_looping="1"
+
+      fi
 
     done
-    echo "$output" > ${output_path%.md}.htm
+    echo "$output_text" > ${output_path%.md}.htm
     echo ${output_path%.md}.htm >> "$GENERATED_LISTING"
 
   fi
