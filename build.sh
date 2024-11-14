@@ -83,11 +83,61 @@ do
   relative_path=$(realpath -m --relative-to="$SOURCE_DIR" "$line")
   output_path="./$relative_path"
 
-  if [ "${relative_path##*.}" = "md" ]
+  if [ -d "$line" ]
   then
 
-    markdown_contents=$(pandoc "$line" -f markdown-smart)
-    echo $markdown_contents
+    # Source listing will also include the working
+    # directory. Since it already exists, a check
+    # needs to be done first. Prevents it from being
+    # added to the clean list
+
+    if [ ! -d "$output_path" ]
+    then
+
+      mkdir "$output_path"
+      echo "$output_path" >> "$GENERATED_LISTING"
+
+    fi
+
+  elif [ "${output_path##*.}" = "md" ]
+  then
+
+    tail -n +2 "$line" > "$GENERATED_DIR/tmp.txt"
+
+    # markdown-smart disables curly qoutes
+    # Using markdown+smart enables it
+
+    markdown_contents=$(pandoc "$GENERATED_DIR/tmp.txt" -f markdown-smart)
+    template_name=$(head -n 1 "$line")
+    template_text=""
+
+    # Check that the provided template exists
+
+    if [ -f "$TEMPLATE_DIR/$template_name" ]
+    then
+
+      template_text=$(cat "$TEMPLATE_DIR/$template_name")
+
+    fi
+
+    is_looping=""
+    output_text=""
+    current_text="$template_text"
+
+    # Loop to substitute variables
+    # Empty string means loop continues
+    # Once it is any non-empty value, the loop ends
+
+    while [ -z "$is_looping" ]
+    do
+
+      output_text="$output_text"${current_text#"*{{"}
+      echo $output_text
+      is_looping="1"
+
+    done
+    echo "$output" > ${output_path%.md}.htm
+    echo ${output_path%.md}.htm >> "$GENERATED_LISTING"
 
   fi
 
