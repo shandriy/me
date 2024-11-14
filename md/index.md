@@ -1,4 +1,4 @@
-t.htm
+generic.htm
 
 <h1 style="margin-bottom:0">OVER THE FULLERENESHIFT</h1>
 <p style="margin-top:0;text-indent:0;text-decoration:none;">*~[OTAKUSPEEDVIBE](https://www.youtube.com/watch?v=rN2mtNvDVGw)~*</p>

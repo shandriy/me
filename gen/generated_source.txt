@@ -1,6 +1,2 @@
 ./md
-./md/.nojekyll
-./md/a
-./md/a/f
 ./md/index.md
-./md/robots.txt

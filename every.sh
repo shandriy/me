@@ -1,1 +1,1 @@
-echo a
+echo "Building $line to ${output_path%.md}.htm"

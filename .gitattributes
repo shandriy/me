@@ -1,10 +1,5 @@
-*.md linguist-language=Markdown
-*.md linguist-detectable=true
-*.yml linguist-detectable=true
-*.yml linguist-language=YAML
-*.gitattributes linguist-language=Git Attributes
-*.gitattributes linguist-detectable=true
-build linguist-vendored=true
-build linguist-detectable=false
-docs linguist-vendored=true
-docs linguist-detectable=false
+*.htm linguist-generated=true
+src/** linguist-detectable=true
+src/** linguist-generated=false
+md/** linguist-detectable=true
+static/** linguist-detectable=true

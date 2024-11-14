@@ -138,7 +138,7 @@ do
 
       output_text="$output_text"${current_text%%"{{"*}
 
-      if [ ${current_text%%"{{"*} != $current_text ]
+      if [ "${current_text%%"{{"*}" != "$current_text" ]
       then
 
         # I have no idea how this is working but it's working
@@ -168,3 +168,7 @@ do
   fi
 
 done < "$GENERATED_SOURCE_LISTING"
+
+# Clear no longer needed files
+
+rm -f "$GENERATED_DIR/tmp.txt"
