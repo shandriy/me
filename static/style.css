@@ -104,6 +104,7 @@ html, body {
   }
   #markdown-contents {
     margin: 24px;
+    margin-bottom: 0;
     background-color: #fff;
     border-radius: 10px;
   }
