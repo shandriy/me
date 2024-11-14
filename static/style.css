@@ -4,50 +4,129 @@ html, body {
   margin: 0;
   padding: 0;
   font-size: 11pt;
+  overflow-x: hidden;
 }
 
-p {
+.no-margin {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#markdown-contents p {
   text-indent: 24pt;
 }
 
-#body {
-  margin: 0;
-  margin-left: 20%;
-  width: 60%;
-  background-color: #fff;
-  min-height: 100%;
+#markdown-contents em {
+  font-style: italic;
 }
 
-#content {
+.no-indent {
+  text-indent: 0;
+}
+
+.sidebar {
+  width: 20%;
+  position: absolute;
+  color: #fff;
+}
+
+.sidebar-contents {
+  padding: 24px;
+}
+
+#left {
+  left: 0;
+}
+
+#right {
+  left: 80%;
+}
+
+.content {
   display: block;
-  padding: 12px;
-  padding-left: 36px;
-  padding-right: 36px;
-}
-@media (max-width: 1280px) {
-  #content {
-    padding-left: 24px;
-    padding-right: 24px;
-  }
-  #body {
-    margin-left: 10%;
-    width: 80%;
-  }
-}
-@media (max-width: 720px) {
-  #content {
-    padding-left: 12px;
-    padding-right: 12px;
-  }
-  #body {
-    margin-left: 0;
-    width: 100%;
-  }
 }
 
-a {
+#center {
+  position: absolute;
+  left: 20%;
+  background-color: #fff;
+  color: #000;
+  margin: 0;
+  padding: 0;
+  width: 60%;
+}
+
+#markdown-contents {
+  padding: 24px;
+}
+
+#center a {
   color: #888;
 }
-a:hover {
+#center a:hover {
   color: #aaa;
+}
+
+.sidebar a {
+  color: #aaa;
+}
+.sidebar a:hover {
+  color: #888;
+}
+#footer-small {
+  display: none;
+}
+
+@media (max-width: 1280px) {
+  #center {
+    width: 70%;
+    left: 0;
+  }
+  .sidebar {
+    position: static;
+    display: block;
+    width: 100%;
+  }
+  #sidebar-wrapper {
+    position: absolute;
+    left: 70%;
+    width: 30%;
+    display: inline-block;
+  }
+}
+
+@media (max-width: 720px) {
+  #center {
+    position: static;
+    display: block;
+    width: 100%;
+    background-color: #000;
+  }
+  #markdown-contents {
+    margin: 24px;
+    background-color: #fff;
+    border-radius: 10px;
+  }
+  .sidebar {
+    position: static;
+    display: block;
+    width: 100%;
+  }
+  .sidebar-contents {
+    padding: 36px;
+  }
+  #sidebar-wrapper {
+    position: static;
+    width: 100%;
+    display: block;
+  }
+  #footer-large {
+    display: none;
+  }
+  #footer-small {
+    display: block;
+    color: #fff;
+    padding: 24px;
+    padding-top: 0;
+  }
 }
