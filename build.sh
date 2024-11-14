@@ -85,7 +85,10 @@ do
 
   if [ "${relative_path##*.}" = "md" ]
   then
-    echo a
+
+    markdown_contents=$(pandoc "$line" -f markdown-smart)
+    echo $markdown_contents
+
   fi
 
 done < "$GENERATED_SOURCE_LISTING"
