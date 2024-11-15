@@ -60,8 +60,8 @@ Links to some random pages I like:
 
 At the moment, my goals for this site (and in general) are:
 
-- Make a better SSG (currently it's just a bash script that concats two template files and converts markdown to HTML - it's terrible)
-- Add a few more pages
+- ~~Make a better SSG~~ Done! The new SSG is written in POSIX Shell and basically gets variables from a custom script and substitutes them into the templates.
+- Add a few more pages.
 - Learn C or C++. Maybe C# (Yes I'm not stupid I know that C# and C/C++ are very different it's just that I want to learn C/C++ because of the wide support and how it's lower level. C# is a lot higher level which means less control (tragic) but it's also easier and it seems to be the only language who's users don't hate it)
 - 3d web-based rendering engine with Chrome 1 support - This means no WebGL, but it should be possible. Performance is the main problem, along with how only affine transformations can be performed on Canvas2d. There are ways to hide this as much as possible though.
 
