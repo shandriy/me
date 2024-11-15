@@ -1,0 +1,3 @@
+Build by running ./build.sh
+Runs on POSIX shell
+Requires pandoc
