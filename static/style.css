@@ -148,3 +148,11 @@ html, body {
     padding-top: 0;
   }
 }
+
+#button-wrapper a {
+  text-decoration: none;
+}
+#button-wrapper a img {
+  width: 88px;
+  height: 31px;
+}
