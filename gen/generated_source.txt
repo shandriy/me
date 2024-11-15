@@ -1,2 +1,3 @@
 ./md
+./md/changelog.md
 ./md/index.md
