@@ -7,8 +7,19 @@ html, body {
   overflow-x: hidden;
 }
 
+#webring-wrapper {
+  width: 100%;
+  text-align: center;
+}
+
 .no-margin {
   margin-top: 0;
+  margin-bottom: 0;
+}
+.no-margin-top {
+  margin-top: 0;
+}
+.no-margin-bottom {
   margin-bottom: 0;
 }
 
@@ -78,6 +89,9 @@ html, body {
 }
 
 @media (max-width: 1280px) {
+  #left .sidebar-contents {
+    padding-bottom: 0;
+  }
   #center {
     width: 70%;
     left: 0;
@@ -96,6 +110,9 @@ html, body {
 }
 
 @media (max-width: 720px) {
+  #left .sidebar-contents {
+    padding-bottom: 0;
+  }
   #center {
     position: static;
     display: block;
