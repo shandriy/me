@@ -2,6 +2,11 @@ generic.htm
 
 ## Changelog
 
+### 15/11/2024
+
+- Added site button
+- Changed mobile detection to check orientation and touchscreen support
+
 ### 14/11/2024
 
 - Added 404 page for GitHub pages

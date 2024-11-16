@@ -97,6 +97,24 @@ html, body {
   width: 88px;
   height: 31px;
 }
+.button {
+  border: none;
+  width: 88px;
+  display: inline-block;
+  height: 31px;
+  margin: 0;
+  padding: 0;
+}
+.button-text {
+  background-color: #000;
+  font-family: monospace;
+  color: #fff;
+  display: inline-block;
+  border: none;
+  width: 88px;
+  height: 31px;
+  overflow: scroll;
+}
 
 @media (max-width: 1280px) {
   #left .sidebar-contents {
