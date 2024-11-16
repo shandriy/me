@@ -11,6 +11,7 @@ FILE_BUILD=./every.sh
 
 # Custom variables
 
+DATE=$(date +"%F %T.%N %::z")
 SECONDS=$(date +"%s")
 FOOTER_TEXT=$(cat ./src/footer-text.htm)
 

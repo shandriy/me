@@ -4,6 +4,7 @@ generic.htm
 
 ### 15/11/2024
 
+- Added time last updated to footer
 - Added site button
 - Changed mobile detection to check orientation and touchscreen support
 
