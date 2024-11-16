@@ -120,7 +120,11 @@ html, body {
   }
 }
 
-@media (max-width: 720px), (max-width: 3.5in) {
+@media
+  (max-width: 720px),
+  (hover: none) and (orientation: portrait),
+  (pointer: none) and (orientation: portrait),
+  (pointer: coarse) and (orientation: portrait) {
   #left .sidebar-contents {
     padding-bottom: 0;
   }
@@ -131,6 +135,7 @@ html, body {
     background-color: #000;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
+    margin-bottom: 0;
   }
   #markdown-contents {
     margin: 24px;
