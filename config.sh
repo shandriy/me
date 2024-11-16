@@ -14,7 +14,7 @@ FILE_BUILD=./every.sh
 SECONDS=$(date +"%s")
 FOOTER_TEXT=$(cat ./src/footer-text.htm)
 
-SONG="Guess_featuring_billie_eilish"
+SONG="you"
 
 # Get song script
 
